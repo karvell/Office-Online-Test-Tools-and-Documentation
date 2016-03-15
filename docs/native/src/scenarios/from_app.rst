@@ -39,8 +39,12 @@ Example::
 
     ms-word:ofe|u|https://contoso/wopi/file/12312|d|Contoso|e|a3243d|n|document1.docx|a|App
 
-The URL used should be URL encoded. 
+The URL used should be URL encoded following RFC3986.
 
+Example::
+
+    ms-word:ofe%7Cu%7Chttps://contoso/wopi/file/12312%7Cd%7CTP_CONTOSO%7Ce%7Ca3243d%7Cn%7Cdocument1.docx%7Ca%7CApp
+    
 Note that the file is opened directly against your service. Your app essentially passes the URL to the file to
 |Office iOS| without passing the actual file. The |Office iOS| app then opens the file directly using the WOPI
 protocol.
