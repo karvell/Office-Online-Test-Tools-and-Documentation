@@ -150,12 +150,17 @@ returned in a :statuscode:`401` response to an unauthenticated request is as fol
 |                   |                                        |          |                                          |
 |                   | Allowed characters: [a-z, A-Z, 0-9]    |          |                                          |
 +-------------------+----------------------------------------+----------+------------------------------------------+
-| UrlSchemes        | URL scheme your app uses. This is an   | No       | \{"iOS" : ["contoso","contoso-EMM"],     |
-|                   | ordered list by platform. Omit any     |          | \ "Android" : ["contoso","contoso-EMM"]  |
-|                   | platforms you do not support. Office   |          | "UWP": ["contoso","contoso-EMM"]}        |
-|                   | will attempt to invoke these URL       |          |                                          |
-|                   | schemes in order before falling back to|          | The value itself must be URL encoded     |
-|                   | the webview auth.                      |          |                                          |
+| UrlSchemes        | URL scheme your app uses for the app   | No       | \{"iOS" : ["contoso","contoso-EMM"],     |
+|                   | to app sign in feature. This is an     |          | \ "Android" : ["contoso","contoso-EMM"]  |
+|                   | ordered list by platform. Omit any     |          | "UWP": ["contoso","contoso-EMM"]}        |
+|                   | platforms you do not support. Office   |          |                                          |
+|                   | will attempt to invoke these URL       |          | The value itself must be URL encoded     |
+|                   | schemes in order before falling back to|          |                                          |
+|                   | the webview auth.                      |          | Note please register a new URL scheme for|
+|                   |                                        |          | use by this feature. Reusing  an existing| 
+|                   |                                        |          | scheme could cause Office to call into a |
+|                   |                                        |          | version of your app that does not support|
+|                   |                                        |          | app to app sign in                       |
 +-------------------+----------------------------------------+----------+------------------------------------------+
 
 These parameters and their values must be formatted as follows:
